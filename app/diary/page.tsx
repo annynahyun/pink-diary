@@ -65,75 +65,78 @@ export default function DiaryPage() {
     return d.toLocaleString();
   };
 
-  return (
-    <main className="min-h-screen bg-pink-100 flex justify-center p-6">
-      <div className="w-full max-w-3xl">
-        <h1 className="text-3xl font-bold text-pink-600 mb-4">Pink Diary 💗</h1>
+return (
+  <main className="min-h-screen bg-pink-100 flex justify-center p-6">
+    <div className="w-full max-w-2xl">
+      {/* 메인 타이틀 */}
+      <h1 className="text-2xl font-bold text-pink-600 mb-6 tracking-tight">
+        Pink Diary 💗
+      </h1>
 
-        {/* 작성 카드 */}
-        <div className="bg-white rounded-2xl shadow-md p-6 mb-6">
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Title
-          </label>
-          <input
-            className="w-full border rounded-xl p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Today's title"
-          />
+      {/* 작성 카드 */}
+      <div className="bg-white rounded-2xl shadow-md p-6 mb-8">
+        <label className="block text-sm font-semibold text-gray-700 mb-2">
+          Title
+        </label>
+        <input
+          className="w-full border rounded-xl p-3 mb-4 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Today's title"
+        />
 
-          <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Content
-          </label>
-          <textarea
-            className="w-full border rounded-xl p-3 h-40 mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="Write about your day..."
-          />
+        <label className="block text-sm font-semibold text-gray-700 mb-2">
+          Content
+        </label>
+        <textarea
+          className="w-full border rounded-xl p-3 h-36 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Write about your day..."
+        />
 
-          <button
-            onClick={handleAdd}
-            className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-xl transition"
-          >
-            Save
-          </button>
-        </div>
-
-        {/* 리스트 */}
-        <div className="space-y-4">
-          {entries.length === 0 ? (
-            <p className="text-gray-600 text-center">
-              No diary entries yet. Start writing your story!
-            </p>
-          ) : (
-            entries.map((e) => (
-              <div key={e.id} className="bg-white rounded-2xl shadow-md p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-800">
-                      {e.title}
-                    </h2>
-                    <p className="text-xs text-gray-500 mt-1">
-                      {formatDate(e.createdAt)}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => handleDelete(e.id)}
-                    className="text-sm px-3 py-2 rounded-xl bg-gray-100 hover:bg-gray-200"
-                  >
-                    Delete
-                  </button>
-                </div>
-
-                <p className="mt-4 whitespace-pre-wrap text-gray-700">
-                  {e.content}
-                </p>
-              </div>
-            ))
-          )}
-        </div>
+        <button
+          onClick={handleAdd}
+          className="w-full bg-pink-500 hover:bg-pink-600 text-white text-sm font-semibold py-3 rounded-xl transition"
+        >
+          Save
+        </button>
       </div>
-    </main>
-  );
+
+      {/* 리스트 */}
+      <div className="space-y-4">
+        {entries.length === 0 ? (
+          <p className="text-sm text-gray-500 text-center">
+            No diary entries yet. Start writing your story 💌
+          </p>
+        ) : (
+          entries.map((e) => (
+            <div key={e.id} className="bg-white rounded-2xl shadow-md p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-800">
+                    {e.title}
+                  </h2>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {formatDate(e.createdAt)}
+                  </p>
+                </div>
+                <button
+                  onClick={() => handleDelete(e.id)}
+                  className="text-xs px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200"
+                >
+                  Delete
+                </button>
+              </div>
+
+              <p className="mt-4 text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">
+                {e.content}
+              </p>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  </main>
+ );
 }
