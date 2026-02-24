@@ -40,7 +40,7 @@ export default function DiaryPage() {
     const t = title.trim();
     const c = content.trim();
     if (!t || !c) {
-      alert("제목과 내용을 모두 입력해줘!");
+      alert("Please enter both a title and content!");
       return;
     }
 
@@ -62,7 +62,7 @@ export default function DiaryPage() {
 
   const formatDate = (iso: string) => {
     const d = new Date(iso);
-    return d.toLocaleString(); // 필요하면 "ko-KR" 넣어도 됨
+    return d.toLocaleString();
   };
 
   return (
@@ -73,30 +73,30 @@ export default function DiaryPage() {
         {/* 작성 카드 */}
         <div className="bg-white rounded-2xl shadow-md p-6 mb-6">
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            제목
+            Title
           </label>
           <input
             className="w-full border rounded-xl p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="오늘의 제목"
+            placeholder="Today's title"
           />
 
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            내용
+            Content
           </label>
           <textarea
             className="w-full border rounded-xl p-3 h-40 mb-4 focus:outline-none focus:ring-2 focus:ring-pink-300"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            placeholder="오늘 있었던 일을 써봐..."
+            placeholder="Write about your day..."
           />
 
           <button
             onClick={handleAdd}
             className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 rounded-xl transition"
           >
-            저장하기
+            Save
           </button>
         </div>
 
@@ -104,7 +104,7 @@ export default function DiaryPage() {
         <div className="space-y-4">
           {entries.length === 0 ? (
             <p className="text-gray-600 text-center">
-              아직 저장된 일기가 없어! 첫 일기를 써보자 💌
+              No diary entries yet. Start writing your story!
             </p>
           ) : (
             entries.map((e) => (
@@ -122,7 +122,7 @@ export default function DiaryPage() {
                     onClick={() => handleDelete(e.id)}
                     className="text-sm px-3 py-2 rounded-xl bg-gray-100 hover:bg-gray-200"
                   >
-                    삭제
+                    Delete
                   </button>
                 </div>
 
