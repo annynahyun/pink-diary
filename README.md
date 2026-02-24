@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+💗 Pink Diary
+📌 프로젝트 소개 | Project Overview
 
-## Getting Started
+KR
+Next.js를 활용해 제작한 비밀번호 기반 개인 다이어리 웹 애플리케이션입니다.
+사용자는 로그인 후 일기를 작성하고 삭제할 수 있으며, localStorage를 통해 새로고침 이후에도 데이터가 유지됩니다.
 
-First, run the development server:
+EN
+Pink Diary is a private diary web application built with Next.js.
+After logging in with a password, users can create and delete diary entries.
+All data is stored in localStorage, allowing entries to persist even after refreshing the page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+주요 기능 | Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+KR
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+비밀번호 기반 로그인 기능
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+일기 작성(Create)
 
-## Learn More
+일기 삭제(Delete)
 
-To learn more about Next.js, take a look at the following resources:
+localStorage를 활용한 데이터 영속성(Persistence)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+핑크 테마 기반의 감성적인 UI 구성
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+EN
 
-## Deploy on Vercel
+Password-based login
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create diary entries
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Delete diary entries
+
+Persistent storage using localStorage
+
+Pink-themed, clean and minimal UI
+
+🛠 기술 스택 | Tech Stack
+
+KR
+
+Next.js (App Router)
+
+TypeScript
+
+TailwindCSS
+
+Git / GitHub
+
+Vercel (배포)
+
+EN
+
+Next.js (App Router)
+
+TypeScript
+
+TailwindCSS
+
+Git / GitHub
+
+Vercel (Deployment)
+
+🚀 배포 링크 | Deployment
+
+https://pink-diary-six.vercel.app
+
+Password: 1234
