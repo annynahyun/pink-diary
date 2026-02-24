@@ -1,9 +1,3 @@
-좋아 나현 😎
-이번엔 **조금 더 개발자 포폴 느낌 나는 README 버전**으로 업그레이드해줄게.
-(배지 + 구조 + 기술 강조)
-
-아래 그대로 GitHub `README.md`에 붙여도 돼.
-
 ---
 
 # 💗 Pink Diary
@@ -19,7 +13,7 @@ A simple private diary web application built with **Next.js**.
 
 ## 📖 Project Overview
 
-### 🇰🇷 한국어
+### 한국어
 
 Next.js(App Router)를 활용하여 제작한 비밀번호 기반 개인 다이어리 웹 애플리케이션입니다.
 사용자는 로그인 후 일기를 작성하고 삭제할 수 있으며,
